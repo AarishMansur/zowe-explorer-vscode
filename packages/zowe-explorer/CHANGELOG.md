@@ -19,6 +19,9 @@ All notable changes to the "vscode-extension-for-zowe" extension will be documen
 ### Bug fixes
 
  - Fixed hover/tooltip inconsistencies in favorited search nodes where search criteria or path was displayed instead of the profile name. [#4011](https://github.com/zowe/zowe-explorer-vscode/issues/4011)
+- Fixed an issue where recalling a sequential data set caused its contents to be overwritten, resulting in data loss. Now, when a data set is recalled, its contents are no longer modified. [#4412](https://github.com/zowe/zowe-explorer-vscode/issues/4412)
+- Fixed an issue where expanding a profile in the Favorites section uploaded empty contents to each favorited USS file, which failed for users without write access and truncated the file for users with write access. [#4450](https://github.com/zowe/zowe-explorer-vscode/issues/4450)
+- Fixed an issue where expanding a profile in the Favorites section uploaded empty contents to each favorited sequential data set, which failed for users without write access and truncated the data set for users with write access. [#4451](https://github.com/zowe/zowe-explorer-vscode/issues/4451)
 - Fixed an issue where creating a new file in a Zowe Explorer virtual workspace would silently fail, causing write operations to fail on that file as a result. [#4426](https://github.com/zowe/zowe-explorer-vscode/pull/4426)
 - Fixed an issue where calling the `AuthUtils.errorHandling` function without a `moreInfo` parameter would cause a runtime error. [#4399](https://github.com/zowe/zowe-explorer-vscode/pull/4399)
 - Fixed Zowe Explorer failing to activate in the VS Code web extension host (`vscode.dev`), which was blocking dependent extensions from activating. [#4389](https://github.com/zowe/zowe-explorer-vscode/issues/4389)
@@ -32,6 +35,8 @@ All notable changes to the "vscode-extension-for-zowe" extension will be documen
 - Fixed an issue where opening a PDS member with a recognized file extension (such as JCL) from the data sets table would fail. [#4416](https://github.com/zowe/zowe-explorer-vscode/pull/4416)
 - Fixed an issue where right-clicking a filtered USS directory (session profile node with an active path filter) showed fewer context menu options than a regular directory node in the tree. [#4289](https://github.com/zowe/zowe-explorer-vscode/issues/4289)
 - Fixed an issue where migrated data sets were sorted incorrectly in favorites. [#4371](https://github.com/zowe/zowe-explorer-vscode/issues/4371)
+- Updated `js-yaml` and `nanoid` dependencies for technical currency. [#4447](https://github.com/zowe/zowe-explorer-vscode/pull/4447)
+- Fixed an issue where the selected profile name changed after the first Unix command was executed. [#4446](https://github.com/zowe/zowe-explorer-vscode/issues/4446)
 
 ## `3.5.1`
 

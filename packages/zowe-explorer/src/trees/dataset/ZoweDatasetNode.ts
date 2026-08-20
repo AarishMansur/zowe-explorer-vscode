@@ -116,7 +116,7 @@ export class ZoweDatasetNode extends ZoweTreeNode implements IZoweDatasetTreeNod
         } else if (isFavorite) {
             this.tooltip = AuthUtils.buildFavoriteTooltip(opts.profile?.name ?? opts.label, opts.profile?.type ?? "");
         } else {
-            this.tooltip = opts.profile?.name ?? opts.label;
+            this.tooltip = this.label as string;
         }
         const icon = IconGenerator.getIconByNode(this);
         if (icon) {
